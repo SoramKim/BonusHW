@@ -25,15 +25,7 @@ public class LsOption {
 	public void run(String[] args) {
 		Options options = new Options();
 		createOptions(options);
-		
-//		try {
-//			if(!args[0].equals("-a") && !args[0].equals("-d") &&
-//					!args[0].equals("-s") && !args[0].equals("-r")&&!args[0].equals("-t")&&!args[0].equals("-h"))
-//				throw new Exception();
-//		} catch (Exception e) {
-//			System.out.println(args[0]+ " is wrong input, Please check ls command");
-//		}
-		
+
 		String path = System.getProperty("user.dir");
 		File currentDirectory= new File(path);
 		File[] allFiles=currentDirectory.listFiles();
@@ -62,7 +54,7 @@ public class LsOption {
 			if(size) {
 				for(File file:allFiles) {
 					if(!file.getName().startsWith("."))
-					System.out.println(file.getName()+" "+file.length()+"bytes");
+					System.out.println(file.getName()+" "+file.length()+ " bytes");
 				}
 			}
 			
